@@ -17,8 +17,7 @@
 <% end %>
 
 <%= render 'form' %>
-  
-<p>*Click on any day to edit availability and price</p>
+
 <div id="calendar"></div>
 
 <script>
@@ -35,7 +34,7 @@
         name: e.fullname,
         start: e['start_date'],
         end: e['end_date'],
-        image: e.image,
+        avatar: e.image,
         status: e.status
       }
     })
@@ -53,7 +52,7 @@
       return $(`
         <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end">
           <div class="fc-content ${event.status}">
-            <span class="fc-title"><img class="img-circle avatar-small" "${event.image}"> ${event.name}</span>
+            <span class="fc-title"><img class="img-circle avatar-small" src="${event.avatar}"> ${event.name}</span>
           </div>
         </a>
       `);
@@ -101,16 +100,16 @@
         $('#new_calendar').modal('show');
 
         $('#calendar_start_date').datepicker({
-          dateFormat: "yy-mm-dd",
+          dateFormat: "mm/dd/yy",
           setDate: start_date
         });
-        $('#calendar_start_date').val(start_date.format("YYYY-MM-DD"));
+        $('#calendar_start_date').val(start_date.format("MM/DD/YYYY"));
 
         $('#calendar_end_date').datepicker({
-          dateFormat: "yy-mm-dd",
+          dateFormat: "mm/dd/yy",
           setDate: end_date
         });
-        $('#calendar_end_date').val(end_date.format("YYYY-MM-DD"));
+        $('#calendar_end_date').val(end_date.format("MM/DD/YYYY"));
       }
     }
   });
@@ -118,15 +117,16 @@
   $('.fc-prev-button').click(function() {
     var current = new Date($('#start-date').val());
     var prev = new Date(current.getFullYear(), current.getMonth() - 1, 1)
-    $('#start-date').val(moment(prev).format('YYYY-MM-DD'))
+    $('#start-date').val(moment(prev).format('MM/DD/YYYY'))
     $('#start-date').trigger('change')
   });
 
   $('.fc-next-button').click(function() {
     var current = new Date($('#start-date').val());
     var next = new Date(current.getFullYear(), current.getMonth() + 1, 1)
-    $('#start-date').val(moment(next).format('YYYY-MM-DD'))
+    $('#start-date').val(moment(next).format('MM/DD/YYYY'))
     $('#start-date').trigger('change')
   });
+
 
 </script>

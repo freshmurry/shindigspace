@@ -15,7 +15,7 @@
     <div id="navbar" class="navbar-collapse collapse">
      <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
           <div class="form-group">
-            <%= text_field_tag :search, params[:search], placeholder: "Pool Near You", class: "form-control", id:"autoaddress" %>
+            <%= text_field_tag :search, params[:search], placeholder: "Spaces Near You", class: "form-control", id:"autoaddress" %>
           </div>
       <% end %>
       
@@ -75,7 +75,7 @@
         <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
         <li <% if current_page?(current_reservations_path) %> class="active" <% end %> ><%= link_to "Current Reservations", current_reservations_path %></li>
         <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "Host Calendar", host_calendar_path %></li>
-        <li <% if current_page?(payment_path) %> class="active" <% end %> ><%= link_to "Account Settings", payment_path %></li>
+        <li <% if current_page?(payment_method_path) %> class="active" <% end %> ><%= link_to "Account Settings", payment_method_path %></li>
       </ul>
     </div>
   </nav>

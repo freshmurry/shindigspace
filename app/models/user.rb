@@ -49,10 +49,9 @@ class User < ApplicationRecord
   end
   
   def send_pin
-    @client = Twilio::REST::Client.new
-    @client.messages.create(
-      # from: '+3125488878',
-      from: '+12057515925',
+    @guest = Twilio::REST::guest.new
+    @guest.messages.create(
+      from: '+3125488878',
       to: self.phone_number,
       body: "Your pin is #{self.pin}"
     )

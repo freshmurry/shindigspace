@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.paperclip_defaults = {
+    config.paperclip_defaults = {
     :storage => :s3,
     s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com",
     :s3_credentials => {
@@ -9,10 +9,8 @@ Rails.application.configure do
       :s3_region => ENV['AWS_REGION']
     }
   }
-  
-# Settings specified here will take precedence over those in config/application.rb.
-  config.assets.version = 1.1
-  
+  # Settings specified here will take precedence over those in config/application.rb.
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -53,7 +51,6 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
   config.web_socket_server_url = "wss://action-cable-poolcrasher.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://action-cable-poolcrasher.herokuapp.com/cable', 'https://action-cable-poolcrasher.herokuapp.com/cable' ]
-
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true

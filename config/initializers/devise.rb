@@ -275,8 +275,9 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  config.omniauth :facebook, '1518262284959364', '309d726626a5e3d8156e7b98c693b966', scope: 'email', info_fields: 'email, name'
-  # config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], callback_url: 'https://shindigspace.com/auth/facebook'
+  # config.omniauth :facebook, '', '', scope: 'email', info_fields: 'email, name'
+  # config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], scope: 'email', info_fields: 'email, name'
+  config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], callback_url: 'https://poolcrasher.herokuapp.com/auth/facebook/callback'
                 # client_options: {
                 #     site: 'https://graph.facebook.com/v2.11',
                 #     authorize_url: "https://www.facebook.com/v2.11/dialog/oauth"

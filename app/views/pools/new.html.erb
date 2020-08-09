@@ -2,7 +2,7 @@
   <div class="col-md-9">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Create Listing
+        Create Your Listing
       </div>
       <div class="panel-body">
         <div class="container">
@@ -13,6 +13,14 @@
                 <label>Pool Type</label>
                 <%= f.select :pool_type, [["Above Ground", "Above Ground"], ["In-Ground", "In-Ground"]],
                   id: "pool_type", prompt: "Select...", class: "form-control" %>
+              </div>
+            </div>
+            
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label>Pool Floats</label>
+                <%= f.select :lifesaver, [["Yes", "Yes"], ["No", "No"]],
+                  id: "lifesaver", prompt: "Select...", class: "form-control" %>
               </div>
             </div>
               

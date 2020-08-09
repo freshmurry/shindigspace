@@ -60,14 +60,22 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+<<<<<<< HEAD
 
   # config.action_cable.url = "wss://poolcrasher.herokuapp.com/cable"
   # config.action_cable.url = 'wss://example.com/cable'
   
   config.web_console.whitelisted_ips << "10.240.0.0/16"
+=======
   
-  #Required for Heroku
-  config.action_mailer.default_url_options = { host: 'https://poolcrasher.herokuapp.com' }
+  config.web_console.whitelisted_ips = '10.0.2.2'
+>>>>>>> 852b5acfeb2cb2d783bf372069a4c07458abf34c
+  
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.action_mailer.default_url_options = { host: 'https://b173e6c7795744bfa4954fdeadfb5556.vfs.cloud9.us-east-1.amazonaws.com' }
+
+  # Mailgun Integration
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

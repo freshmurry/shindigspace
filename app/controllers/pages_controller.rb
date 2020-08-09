@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @pools = Pool.where(active: true).limit(6)
+    @pools = Pool.where(active: true).limit(3)
   end
 
   def search

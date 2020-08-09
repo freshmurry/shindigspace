@@ -4,8 +4,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @pools = @user.pools
-    # redirect_to root_path, notice: "You don't have permission to see this profile" unless current_user == @user
-
 
     # Display all the guest reviews to host (if this user is a host)
     @guest_reviews = Review.where(type: "GuestReview", host_id: @user.id)
@@ -69,9 +67,9 @@ class UsersController < ApplicationController
     redirect_to payment_path
   rescue Stripe::CardError => e
     flash[:alert] = e.message
-    redirect_to payment_path
+    redirect_to payment_method_path
   end
-  
+
   private
 
     def user_params

@@ -1,9 +1,9 @@
 class GuestReviewsController < ApplicationController
 
   def create
-    # Step 1: Check if the reservation exist
+    # Step 1: Check if the reservation exist (pool_id, host_id, host_id)
 
-    # Step 2: Check if the current host already reviewed the gues in this reservation.
+    # Step 2: Check if the current host already reviewed the guest in this reservation.
 
     @reservation = Reservation.where(
                     id: guest_review_params[:reservation_id],
@@ -36,7 +36,7 @@ class GuestReviewsController < ApplicationController
     @guest_review = Review.find(params[:id])
     @guest_review.destroy
 
-    redirect_back(fallback_location: request.referer, notice: "Review Deleted!")
+    redirect_back(fallback_location: request.referer, notice: "Removed...!")
   end
 
   private

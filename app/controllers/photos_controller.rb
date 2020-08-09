@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
     @pool = Pool.find(params[:pool_id])
 
     if params[:images]
-      params[:images].each do |img|
+        params[:images].each do |img|
         @pool.photos.create(image: img)
       end
 
