@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200804035233) do
+ActiveRecord::Schema.define(version: 20180109174910) do
 
   create_table "calendars", force: :cascade do |t|
     t.date     "day"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20200804035233) do
     t.string   "location_type"
     t.string   "address"
     t.string   "listing_name"
-    t.string   "float"
+    t.string   "lifesaver"
     t.text     "description"
     t.integer  "accommodate"
     t.integer  "restrooms"
