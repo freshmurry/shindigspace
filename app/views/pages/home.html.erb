@@ -1,17 +1,14 @@
 <div class="row">
-  <div class="col-md-8 banner">
+  <div class="col-md-12 banner text-center">
     <h1><span class="text-blue">Book and rent pool time in your neighborhood</span> simple and easy.</h1>
   </div>
-
-  <div class="col-md-12"><h4>Search for a pool in your neighborhood</h4></div>
 </div>
-
 
   <div class="row">
     <div class="col-md-6">
       <%= form_tag search_path, method: :get do %>
 
-      <%= text_field_tag :search, params[:search], placeholder: "Search Pools", class: "form-control", id: "autolocation" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for a Pool in Your Neighborhood", class: "form-control", id: "autolocation" %>
     </div>&nbsp;
 
     <div class="col-md-2">
@@ -24,72 +21,129 @@
 <br>
 
 <!-- POOLS -->
-<div class="text-center"><h2>Pools Near You</h2>
-  <p>Book and rent pool time within your own neighborhood</p>
+<div class="banner text-center">
+	<h2 class="text-blue">Pools Near You</h2>
+  <h3>Book and rent pool time within your own neighborhood</h3>
 </div>
 <br/>
 
-<div class="row">
+<div class="banner row">
   <%= render partial: "pools/pools_list", locals: {pools: @pools} %>
 </div>
 
+<!-- HOW POOLCRASHER WORKS -->
+<div class="page-section">
+  <div class="banner text-center">
+   	<h2 class="text-blue">How PoolCrasher Works</h2>
+    <h3>Social Distance Contact-less Awesomeness</h3>
+  </div>
+    
+  <div class="row text-center">
+  <div class="col-md-4">
+    <div class="fas fa-swimming-pool fa-4x text-blue"></div>
+    <h3 class="my-3">Find a Pool</h3>
+    <p class="text-center">Search for a pool near you, wait until the host confirm your date, and await your approval. Listings with the <i class="fa fa-bolt" style="color: #ffb400"></i> icon will be booked instantly.</p>
+  </div>
+                    
+   <div class="col-md-4">
+   	<div class="fas fa-envelope fa-4x text-blue"></div>
+    <h3>Chat With Host</h3>
+    <p class="text-center">Send a message to your host if you need additional information or just to say thank you. Host will communicate any additional information as needed.</p>
+  </div>
+                    
+  <div class="col-md-4">
+    <div class="fas fa-credit-card fa-4x text-blue"></div>
+   	<h3>Book and Pay</h3>
+   	<p class="text-center">Our calender system helps both host and guest see your reservation day in realtime. Submit your payment will be a breeze through our secure Stripe checkout.</p>
+  </div>
+  
+  <div class="row">
+    <div class="banner col-lg-12 text-center">
+      <button class="btn btn-form">
+        <%= link_to "Sign Me Up!", new_user_registration_path, style: "text-decoration: none; color: #FFF; font-weight: 500; font-size: 20px" %>
+      </button>
+    </div>
+  </div>
+</div>
 
-<!--<h2 class="col-md-12 banner"><span class="text-blue">Why use</span> PoolCrasher</h2>-->
+<!-- TESTIMONIALS -->
+<div class="banner page-section bg-light">
+  <!--<div class="container">-->
+    <div class="text-center">
+      <h2 class="section-heading text-blue">Our Amazing Customers</h2>
+      <h3 class="section-subheading text-muted">Here's what our customers had to say...</h3>
+    </div>
+  
+    <div class="banner row">
+      <div class="col-lg-4">
+        <div class="discovery-card" style="background-image: url('/assets/testimonials-1.jpg')" alt="Customer 1"></div>
+        <h3>Katy S.</h3>
+        <p class="text-center">With the beaches closed, I was in utter amazement to find that people in my own neighborhood renting pool time. So happy I found PoolCrasher.</p>
+      </div>  
+  
+      <div class="col-lg-4">
+        <div class="discovery-card" style="background-image: url('/assets/testimonials-2.jpg')" alt="Customer 2"></div>
+        <h3>Larry P.</h3>
+        <p class="text-center">There's probably no other better way to beat the summer's heat. Living in an apartment doen't come with a backyard pool. 
+        I booked a PoolCrasher for my girlfriend and I and enjoyed our time in the water.</p>
+      </div>
+  			
+      <div class="col-lg-4">
+        <div class="discovery-card" style="background-image: url('/assets/testimonials-3.jpg')" alt="Customer 3"></div>
+        <h3>Diana W.</h3>
+        <p class="text-center">I left my sunscreen and towel at home and my PoolCrasher host was super helpful in providing this prior to my arrival. I will be booking again soon!</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <button class="btn btn-form">
+          <%= link_to "Sign Me Up!", new_user_registration_path, style: "text-decoration: none; color: #FFF; font-weight: 500; font-size: 20px" %>
+        </button>
+      </div>
+    </div>
+  <!--</div>-->
+</div>
 
-  
-  
-  
 <!-- CITIES -->
-<div class="text-center"><h2>PoolCrasher in other Cities Coming Soon!</h2></div>
+<div class="banner text-blue text-center"><h2>PoolCrasher in other Cities Coming Soon!</h2></div>
 <br/>
 
 <div class="row">
-  <div class="col-md-3 col-sm-3">
+  <div class="col-md-4">
 		<a href="https://poolcrasher.herokuapp.com/search?utf8=✓&search=chicago">
 			<div class="discovery-card" style="background-image: url('/assets/chicago.jpg')">
 				<div class="va-container">
 					<div class="va-middle text-center">
-						<h2><strong>Chicago</strong></h2>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-  
-	<div class="col-md-3 col-sm-3">
-		<a href="https://poolcrasher.herokuapp.com/search?utf8=✓&search=atlanta">
-			<div class="discovery-card" style="background-image: url('/assets/atlanta.jpg')">
-				<div class="va-container">
-					<div class="va-middle text-center">
-						<h2><strong>Atlanta</strong></h2>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-  
-	<div class="col-md-3 col-sm-3">
-		<a href="https://poolcrasher.herokuapp.com/search?utf8=✓&search=dallas">
-			<div class="discovery-card" style="background-image: url('/assets/dallas.jpg')">
-				<div class="va-container">
-					<div class="va-middle text-center">
-						<h2><strong>Dallas</strong></h2>
+						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Chicago</strong></h2>
 					</div>
 				</div>
 			</div>
 		</a>
 	</div>
 
-	<div class="col-md-3 col-sm-3">
-		<div class="discovery-card" style="border: 1px solid #333">
-			<div class="va-container">
-				<div class="va-middle text-center" style="color: red;">
-					<h4>COMING SOON!</h4>
-          <p style="padding: 5px">While we are super anxious to enter your city, PoolCrasher is focusing on growing in targeted markets before expanding our horizions.</p>
-          <p>We hope to see you soon!</p>
+	<div class="col-md-4">
+		<a href="https://poolcrasher.herokuapp.com/search?utf8=✓&search=atlanta">
+			<div class="discovery-card" style="background-image: url('/assets/atlanta.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Atlanta</strong></h2>
+					</div>
 				</div>
 			</div>
-		</div>
+		</a>
+	</div>
+
+	<div class="col-md-4">
+		<a href="https://poolcrasher.herokuapp.com/search?utf8=✓&search=dallas">
+			<div class="discovery-card" style="background-image: url('/assets/dallas.jpg')">
+				<div class="va-container">
+					<div class="va-middle text-center">
+						<h2 style="text-decoration: none; color: #FFF; font-weight: 500; font-size: 60px"><strong>Dallas</strong></h2>
+					</div>
+				</div>
+			</div>
+		</a>
 	</div>
 </div>
 

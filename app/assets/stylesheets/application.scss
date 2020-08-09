@@ -37,8 +37,59 @@ body {
             box-sizing: border-box;
 }
 
+.page-section {
+  padding: 6rem 0;
+}
+
+.page-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h4.my-3 {
+  font-weight: 700;
+}
+
+.page-section .bg-light{
+  padding: 6rem 0;
+  
+}
+
+.bg-light {
+  // background-color: #f8f9fa !important;
+  width: 100%;
+}
+
+.col-lg-4 .discovery-card {
+  width: 30rem;
+  height: 30rem;
+  border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  text-align: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 50% !important;
+  vertical-align: middle;
+  border-style: none;
+}
+
 a {
   color: #34495E;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .container {
@@ -48,6 +99,7 @@ a {
 .container h3 {
   margin-right: -40px;
   margin-left: -40px;
+  text-align: center;
 }
 
 div.panel-body {
@@ -65,7 +117,7 @@ div.panel-body {
 }
 
 .text-blue, .icon-red {
-  color: #14325C;
+  color: #34495E;
 }
 
 // NAVBARS

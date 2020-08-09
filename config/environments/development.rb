@@ -60,8 +60,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  
-  config.reload_classes_only_on_change = false
 
   # config.action_cable.url = "wss://poolcrasher.herokuapp.com/cable"
   # config.action_cable.url = 'wss://example.com/cable'
