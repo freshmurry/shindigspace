@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20200804035233) do
     t.string   "location_type"
     t.string   "address"
     t.string   "listing_name"
+    t.string   "float"
     t.text     "description"
     t.integer  "accommodate"
     t.integer  "restrooms"
@@ -82,7 +83,6 @@ ActiveRecord::Schema.define(version: 20200804035233) do
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "lifesaver"
     t.index ["user_id"], name: "index_pools_on_user_id"
   end
 

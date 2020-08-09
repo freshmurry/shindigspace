@@ -60,16 +60,11 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-<<<<<<< HEAD
 
   # config.action_cable.url = "wss://poolcrasher.herokuapp.com/cable"
   # config.action_cable.url = 'wss://example.com/cable'
   
   config.web_console.whitelisted_ips << "10.240.0.0/16"
-=======
-  
-  config.web_console.whitelisted_ips = '10.0.2.2'
->>>>>>> 852b5acfeb2cb2d783bf372069a4c07458abf34c
   
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
