@@ -75,6 +75,7 @@ h4.my-3 {
 
 a {
   color: #34495E;
+  // color: #00A699;
 }
 
 h1 {
@@ -156,8 +157,13 @@ ul.nav.navbar-nav.navbar-right a {
 .btn {
   color: #fff;
   border-radius: 5px;
+  font-weight: bold;
   padding: 9px 27px;
-  font-family: Ubuntu;
+}
+
+.btn-small {
+  padding: 5px 15px;
+  margin-top: 15px;
 }
 
 .btn:hover, .btn:focus {
@@ -175,8 +181,8 @@ ul.nav.navbar-nav.navbar-right a {
 }
 
 .btn.btn-normal {
-  border: 1px solid #34495E;
-  background-color: #34495E;
+  border: 1px solid #ff5a5f;
+  background-color: #ff5a5f;
 }
 
 .btn.btn-normal:active {
@@ -186,21 +192,9 @@ ul.nav.navbar-nav.navbar-right a {
 }
 
 .btn.btn-form {
-  border: 1px solid #34495E;
-  background-color: #34495E;
-}
-
-// .btn-small {
-//   padding: 5px 15px;
-//   margin-top: 15px;
-// }
-
-.btn.btn-form.btn-small {
-  margin-left: 10px;
-}
-
-button.btn.btn-form.btn-small {
-  margin-top: 10px;
+  border: 1px outset #00A699;
+  background-color: #00A699;
+  border-radius: 2px;
 }
 
 .btn.btn-form:active {
