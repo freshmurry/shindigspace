@@ -15,14 +15,6 @@
                   id: "pool_type", prompt: "Select...", class: "form-control" %>
               </div>
             </div>
-            
-            <div class="col-md-4 select">
-              <div class="form-group">
-                <label>Pool Floats</label>
-                <%= f.select :lifesaver, [["Yes", "Yes"], ["No", "No"]],
-                  id: "lifesaver", prompt: "Select...", class: "form-control" %>
-              </div>
-            </div>
               
             <div class="col-md-4 select">
               <div class="form-group">
@@ -38,7 +30,15 @@
                 <%= f.select :restrooms, [["1", 1], ["2", 2], ["None", "None"]], id: "restrooms", prompt: "Select...", class: "form-control" %>
               </div>
             </div>
-              
+            
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label>Pool Float/Lifesaver</label>
+                <%= f.select :lifesaver, [["Yes", "Yes"], ["No", "No"]],
+                  id: "lifesaver", prompt: "Select...", class: "form-control" %>
+              </div>
+            </div>
+            
             <div class="col-md-4 select">
               <div class="form-group">
                 <label>Booking Type</label>
