@@ -7,6 +7,7 @@ class User < ApplicationRecord
   
   validates :fullname, presence: true, length: {maximum: 50}
   
+  has_attached_file :avatar  
   has_many :pools
   has_many :reservations
   

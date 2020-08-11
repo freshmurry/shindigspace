@@ -68,7 +68,7 @@ Rails.application.configure do
   
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'https://b173e6c7795744bfa4954fdeadfb5556.vfs.cloud9.us-east-1.amazonaws.com' }
+  config.action_mailer.default_url_options = { host: 'https://37e5371448fa4b70b49ca2697e0a1b75.vfs.cloud9.us-east-1.amazonaws.com' }
 
   # Mailgun Integration
   
