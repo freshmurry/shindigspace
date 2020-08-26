@@ -27,7 +27,7 @@
             <span id="average_rating"></span>
           </div>
           <div class="center">
-            <% if current_user && current_user != @user %>
+            <% if current_user && current_user != @pool.user %>
               <%= link_to "Message Host", conversations_path(sender_id: current_user.id, recipient_id: @pool.user.id), method: :post, class: "btn btn-default" %>
             <% end %>
           </div>

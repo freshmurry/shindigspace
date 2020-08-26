@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user! 
-  before_action :set_conversation, only: [:show, :destroy]
+  before_action :set_conversation
 
   def index
     if current_user == @conversation.sender || current_user == @conversation.recipient
@@ -11,20 +11,30 @@ class MessagesController < ApplicationController
     end
   end
 
+  # def create
+  #   @message = @conversation.messages.new(message_params)
+  #   @messages = @conversation.messages.order("created_at DESC")
+
+  #   if current_user == pool.user
+  #     flash[:alert] = "You cannot send a message to yourself!"
+  #     redirect_to pool
+  #   end
+      
+  #   if @message.save
+  #     ActionCable.server.broadcast "conversation_#{@conversation.id}", message: render_message(@message)
+  #   end
+  # end
+
   def create
     @message = @conversation.messages.new(message_params)
     @messages = @conversation.messages.order("created_at DESC")
 
-    if current_user == pool.user
-      flash[:alert] = "You cannot send a message to yourself!"
-      redirect_to pool
-    end
-      
     if @message.save
       ActionCable.server.broadcast "conversation_#{@conversation.id}", message: render_message(@message)
+      redirect_to conversation_messages_path(@conversation)
     end
   end
-
+  
   def destroy
     @message.destroy
     redirect_to messages_url

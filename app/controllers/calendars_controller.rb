@@ -29,25 +29,25 @@ class CalendarsController < ApplicationController
 
     params[:start_date] ||= Date.current.to_s
     params[:pool_id] ||= @pools[0] ? @pools[0].id : nil
-
+  
     if params[:q].present?
       params[:start_date] = params[:q][:start_date]
       params[:pool_id] = params[:q][:pool_id]
     end
-
+  
     @search = Reservation.ransack(params[:q])
   
     if params[:pool_id]
       @pool = Pool.find(params[:pool_id])
       start_date = Date.parse(params[:start_date])
-
+  
       first_of_month = (start_date - 1.months).beginning_of_month # => Jun 1
       end_of_month = (start_date + 1.months).end_of_month # => Aug 31
-
+  
       @events = @pool.reservations.joins(:user)
                       .select('reservations.*, users.fullname, users.image, users.email, users.uid')
-                      .where('(start_date BETWEEN ? AND ?) AND status <> ?', first_of_month, end_of_month, 3)
-      @events.each{ |e| e.image = image_url(e) }
+                      .where('(start_date BETWEEN ? AND ?) AND status <> ?', first_of_month, end_of_month, 2)
+      @events.each{ |e| e.image = avatar_url(e) }
       @days = Calendar.where("pool_id = ? AND day BETWEEN ? AND ?", params[:pool_id], first_of_month, end_of_month)
     else
       @pool = nil

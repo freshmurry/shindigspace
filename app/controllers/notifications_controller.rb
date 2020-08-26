@@ -8,17 +8,14 @@ class NotificationsController < ApplicationController
     @notifications = current_user.notifications.reverse
   end
 
-  def destroy
-    @notification.destroy
-    format.js
+  # def destroy
+    # @notification.destroy
+    # redirect_back(fallback_location: request.referer, notice: "Notification Deleted!")
+  # end
 
-    redirect_back(fallback_location: request.referer, notice: "Notification Deleted!")
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_notification
+    @notification = Notifications.find(params[:id])
   end
-
-    private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_notification
-      @notification = Notifications.find(params[:id])
-    end
-  	
 end

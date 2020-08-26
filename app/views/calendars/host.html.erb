@@ -75,9 +75,8 @@
           cell.append('<span class="day-price">' + '$<%= @pool.price %>' + '</span>')
         }
       <% end %>
-
-
     },
+    
     selectable: true,
     select: function(start, end, jsEvent, view) {
       var start_date = moment(start);
@@ -127,6 +126,4 @@
     $('#start-date').val(moment(next).format('MM/DD/YYYY'))
     $('#start-date').trigger('change')
   });
-
-
 </script>
