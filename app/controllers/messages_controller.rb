@@ -11,20 +11,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # def create
-  #   @message = @conversation.messages.new(message_params)
-  #   @messages = @conversation.messages.order("created_at DESC")
-
-  #   if current_user == pool.user
-  #     flash[:alert] = "You cannot send a message to yourself!"
-  #     redirect_to pool
-  #   end
-      
-  #   if @message.save
-  #     ActionCable.server.broadcast "conversation_#{@conversation.id}", message: render_message(@message)
-  #   end
-  # end
-
   def create
     @message = @conversation.messages.new(message_params)
     @messages = @conversation.messages.order("created_at DESC")
@@ -35,9 +21,9 @@ class MessagesController < ApplicationController
     end
   end
   
-  def destroy
-    @message.destroy
-    redirect_to messages_url
+  # def destroy
+  #   @message.destroy
+  #   redirect_to messages_url
     # @message = Message.find(params[:id])
     # @conversation = @message.conversation
 
@@ -46,8 +32,8 @@ class MessagesController < ApplicationController
 
     # respond_to :js
 
-    redirect_back(fallback_location: request.referer, notice: "Message Deleted!")
-  end
+  #   redirect_back(fallback_location: request.referer, notice: "Message Deleted!")
+  # end
   
   private
 
