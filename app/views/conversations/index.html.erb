@@ -12,12 +12,8 @@
                 <div class="row conversation">
                   <% if conversation.messages.any? %>
                     <div class="col-md-4">
-                      <% if other %>
                         <%= image_tag avatar_url(other), class: "img-circle avatar-small" %>
-                      <% end %>  
-                      <% if other %>
                         <b><%= other.fullname %></b>
-                      <% end %>  
                       <%= conversation.messages.last.message_time %>
                     </div>
                     
