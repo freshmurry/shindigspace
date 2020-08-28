@@ -31,9 +31,9 @@ class ConversationsController < ApplicationController
   end
 
   private
-    def set_conversation
-      @conversation = Conversation.find(params[:id])
-    end
+    # def set_conversation
+    #   @conversation = Conversation.find(params[:id])
+    # end
     
     def conversation_params
       params.permit(:sender_id, :recipient_id)
