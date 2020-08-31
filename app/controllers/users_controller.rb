@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     if current_user.phone_verified
       flash[:notice] = "Your phone number is verified."
     else
-      flash[:alert] = "Cannot verify your phone number."
+      flash[:alert] = "We couldn't verify your phone number."
     end
 
     redirect_to edit_user_registration_path
