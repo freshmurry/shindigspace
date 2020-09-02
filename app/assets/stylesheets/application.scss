@@ -22,10 +22,11 @@ html {
 }
 
 body {
+  margin: 0;
   color: #565a5c;
   background-color: #FFF;
   font-family: "Varela Round", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  padding-bottom: 200px;
+  padding-bottom: 175px;
   position: relative;
   overflow-x: hidden;
   width: 100%;
@@ -36,6 +37,14 @@ body {
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
+
+.container {
+  width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}    
 
 .page-section {
   padding: 6rem 0;
@@ -59,6 +68,60 @@ h4.my-3 {
   // background-color: #f8f9fa !important;
   width: 100%;
 }
+
+// HEADER
+header {
+  background-image: url('https://i.pinimg.com/originals/fd/7a/9e/fd7a9ea2a02b9cd3a05ea4dbe55ee837.jpg');
+}
+
+.page-header {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: inherit;
+  margin: 0;
+  color: white !important;
+}
+
+.page-header-content {
+  margin-top: 120px;
+}
+
+.page-header-dark .page-header-title {
+  color: #FFF !important;
+}
+
+.overlay {
+  position: relative;
+}
+
+.bg-img-cover {
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.overlay-90:before {
+  /* opacity: .9; */
+}
+.overlay-primary:before {
+  /* background-color: #0061f2!important; */
+}
+
+.overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .3;
+}
+// END HEADER
 
 .col-lg-4 .discovery-card {
   width: 30rem;
@@ -89,8 +152,8 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
-  font-weight: 600;
+  // font-size: 30px;
+  // font-weight: 600;
 }
 
 .container {
@@ -194,7 +257,7 @@ ul.nav.navbar-nav.navbar-right a {
 .btn.btn-form {
   border: 1px outset #00A699;
   background-color: #00A699;
-  border-radius: 2px;
+  // border-radius: 2px;
 }
 
 .btn.btn-form:active {
@@ -409,22 +472,15 @@ ul.nav.navbar-nav.navbar-right a {
   font-size: 14px;
 }
 
-div.price-box-wrapper {
-  position: absolute;
-  padding: 4px 8px;
-  color: #fff;
-  background-color: rgba(0,0,0,.5);
-  text-align: center;
-  box-sizing: border-box;
-}
-
-div.box-wrapper {
-  padding: 4px 8px;
-  color: #fff;
-  // background-color: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  font-size: 14px;
-  font-weight: bold;
+.price-box-wrapper {
+    position: absolute;
+    right: 25px;
+    bottom: 105px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    color: #FFF;
+    background-color: #212429;
+    text-align: center;
 }
 
 // RESERVATIONS
@@ -656,3 +712,5 @@ div.box-wrapper {
 .container .text-muted {
   margin: 20px -55px 20px -55px;
 }
+
+// END FOOTER //

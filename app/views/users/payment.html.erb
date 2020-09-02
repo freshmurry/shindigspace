@@ -1,46 +1,49 @@
-<div class="row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Payment", payment_method_path, class: "sidebar-link active" %></li>
-      <li class="sidebar-item"><%= link_to "Payout", payout_method_path, class: "sidebar-link" %></li>
-      <li class="sidebar-item"><%= link_to "Notification Settings", notification_settings_path, class: "sidebar-link" %></li>
-    </ul>
-  </div>
-
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">Payment</div>
-      <div class="panel-body">
-        <div class="container">
-            <%= form_tag("/add_card", method: "post", id: "add-card") do %>
-
-                <label>
-                  <span>Name</span>
-                  <input name="cardholder-name" class="field" placeholder="As it appears on card" />
-                </label>
-
-                <label>
-                  <span>Card #</span>
-                  <div id="card-element" class="field"></div>
-                </label>
-
-                <div class="outcome">
-                  <div class="error" role="alert"></div>
-                </div>
-
-                <% if current_user.stripe_id %>
-                  <button type="submit" class="btn btn-normal btn-block">Update Card</button>
-                <% else %>
-                  <button type="submit" class="btn btn-normal btn-block text-center">Add Card</button><br></br>
-                  <p>*Card info is never saved, super secure, and fully protected up to 256-bit SSL encryption</p>
+<section class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="sidebar-list">
+          <li class="sidebar-item"><%= link_to "Payment", payment_method_path, class: "sidebar-link active" %></li>
+          <li class="sidebar-item"><%= link_to "Payout", payout_method_path, class: "sidebar-link" %></li>
+          <li class="sidebar-item"><%= link_to "Notification Settings", notification_settings_path, class: "sidebar-link" %></li>
+        </ul>
+      </div>
+    
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">Payment</div>
+          <div class="panel-body">
+            <div class="container">
+                <%= form_tag("/add_card", method: "post", id: "add-card") do %>
+    
+                    <label>
+                      <span>Name</span>
+                      <input name="cardholder-name" class="field" placeholder="As it appears on card" />
+                    </label>
+    
+                    <label>
+                      <span>Card #</span>
+                      <div id="card-element" class="field"></div>
+                    </label>
+    
+                    <div class="outcome">
+                      <div class="error" role="alert"></div>
+                    </div>
+    
+                    <% if current_user.stripe_id %>
+                      <button type="submit" class="btn btn-normal btn-block">Update Card</button>
+                    <% else %>
+                      <button type="submit" class="btn btn-normal btn-block text-center">Add Card</button><br></br>
+                      <p>*Card info is never saved, super secure, and fully protected up to 256-bit SSL encryption</p>
+                    <% end %>
                 <% end %>
-
-            <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>  
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
