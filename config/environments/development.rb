@@ -61,14 +61,14 @@ Rails.application.configure do
   
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # config.action_cable.url = "wss://poolcrasher.herokuapp.com/cable"
+  # config.action_cable.url = "wss://shindigspace.herokuapp.com/cable"
   # config.action_cable.url = 'wss://example.com/cable'
   
   config.web_console.whitelisted_ips << "10.240.0.0/16"
   
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'https://37e5371448fa4b70b49ca2697e0a1b75.vfs.cloud9.us-east-1.amazonaws.com' }
+  config.action_mailer.default_url_options = { host: 'https://af571fe0381d4f2d9b91b88759c661f7.vfs.cloud9.us-east-1.amazonaws.com/' }
 
   # Mailgun Integration
   

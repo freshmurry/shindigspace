@@ -1,24 +1,24 @@
 class PhotosController < ApplicationController
 
   def create
-    @pool = Pool.find(params[:pool_id])
+    @venue = Venue.find(params[:venue_id])
 
     if params[:images]
         params[:images].each do |img|
-        @pool.photos.create(image: img)
+        @venue.photos.create(image: img)
       end
 
-      @photos = @pool.photos
+      @photos = @venue.photos
       redirect_back(fallback_location: request.referer, notice: "Saved...")
     end
   end
 
   def destroy
     @photo = Photo.find(params[:id])
-    @pool = @photo.pool
+    @venue = @photo.venue
 
     @photo.destroy
-    @photos = Photo.where(pool_id: @pool.id)
+    @photos = Photo.where(venue_id: @venue.id)
 
     respond_to :js
   end

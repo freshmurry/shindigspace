@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109174910) do
+ActiveRecord::Schema.define(version: 20200908080630) do
 
   create_table "calendars", force: :cascade do |t|
     t.date     "day"
     t.integer  "price"
     t.integer  "status"
-    t.integer  "pool_id"
+    t.integer  "venue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pool_id"], name: "index_calendars_on_pool_id"
+    t.index ["venue_id"], name: "index_calendars_on_venue_id"
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -48,47 +48,19 @@ ActiveRecord::Schema.define(version: 20180109174910) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer  "pool_id"
+    t.integer  "venue_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.index ["pool_id"], name: "index_photos_on_pool_id"
-  end
-
-  create_table "pools", force: :cascade do |t|
-    t.string   "pool_type"
-    t.string   "location_type"
-    t.string   "address"
-    t.string   "listing_name"
-    t.string   "lifesaver"
-    t.text     "description"
-    t.integer  "accommodate"
-    t.integer  "restrooms"
-    t.boolean  "is_towels"
-    t.boolean  "is_garage_parking"
-    t.boolean  "is_heated_pool"
-    t.boolean  "is_parking"
-    t.boolean  "is_chairs"
-    t.boolean  "is_speaker"
-    t.boolean  "is_accessible"
-    t.integer  "price"
-    t.integer  "tip"
-    t.boolean  "active"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "instant"
-    t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["user_id"], name: "index_pools_on_user_id"
+    t.index ["venue_id"], name: "index_photos_on_venue_id"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "pool_id"
+    t.integer  "venue_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer  "price"
@@ -96,14 +68,14 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "status",     default: 0
-    t.index ["pool_id"], name: "index_reservations_on_pool_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+    t.index ["venue_id"], name: "index_reservations_on_venue_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
     t.integer  "star",           default: 1
-    t.integer  "pool_id"
+    t.integer  "venue_id"
     t.integer  "reservation_id"
     t.integer  "guest_id"
     t.integer  "host_id"
@@ -112,8 +84,8 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.datetime "updated_at",                 null: false
     t.index ["guest_id"], name: "index_reviews_on_guest_id"
     t.index ["host_id"], name: "index_reviews_on_host_id"
-    t.index ["pool_id"], name: "index_reviews_on_pool_id"
     t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
+    t.index ["venue_id"], name: "index_reviews_on_venue_id"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -161,6 +133,43 @@ ActiveRecord::Schema.define(version: 20180109174910) do
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "venue_type"
+    t.string   "event_type"
+    t.integer  "accommodate"
+    t.integer  "restrooms"
+    t.string   "listing_name"
+    t.text     "description"
+    t.string   "address"
+    t.boolean  "is_kitchen"
+    t.boolean  "is_tables"
+    t.boolean  "is_chairs"
+    t.boolean  "is_microphone"
+    t.boolean  "is_projector"
+    t.boolean  "is_speakers"
+    t.boolean  "is_self_parking"
+    t.boolean  "is_valet_parking"
+    t.boolean  "is_garage_parking"
+    t.boolean  "is_air"
+    t.boolean  "is_heating"
+    t.boolean  "is_wifi"
+    t.boolean  "is_custodial"
+    t.boolean  "is_accessible"
+    t.boolean  "is_tablecloths"
+    t.boolean  "is_garbage_removal"
+    t.boolean  "is_stage"
+    t.integer  "price"
+    t.boolean  "active"
+    t.integer  "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "instant",            default: 1
+    t.boolean  "is_bar"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
 end

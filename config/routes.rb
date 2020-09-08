@@ -14,7 +14,7 @@ Rails.application.routes.draw do
      end
    end
 
-   resources :pools do		
+   resources :venues do
     member do		
       get 'listing'
       get 'pricing'
