@@ -1,5 +1,5 @@
-# PoolCrasher
+# ShindigSpace
 
-[*PoolCrasher*](https://poolcrasher.herokuapp.com) is a pool booking and rental app that connects pool owners and their neighbors.
+[*ShindigSpace*](https://shindigspace.herokuapp.com) is a venue space booking website.
 
 by [Lawrence Murry](https://freshmurry.com/about)
