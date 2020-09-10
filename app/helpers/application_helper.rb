@@ -16,7 +16,7 @@ module ApplicationHelper
 
   # ---- LIVE ----
   # "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://shindigspace.com/auth/stripe_connect/callback&client_id=ca_HmZd2YZ3PVyTCB7UBoBfh0fq4lyNNJtp&state={STATE_VALUE}"
-  "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://shindigspace.com/auth/stripe_connect/callback&client_id={CONNECTED_STRIPE_ACCOUNT_ID}&state={STATE_VALUE}"
+  "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://shindigspace.herokuapp.com/auth/stripe_connect/callback&client_id={CONNECTED_STRIPE_ACCOUNT_ID}&state={STATE_VALUE}"
   # "https://dashboard.stripe.com/express/oauth/authorize?response_type=code&client_id=ca_HmZd2YZ3PVyTCB7UBoBfh0fq4lyNNJtp&scope=read_write"
   # "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://shindigspace.com/auth/stripe_connect/callback&client_id=ca_Bz129rceytBvxCIxgLptuWQeV6JayofE&state=read_write"
   end

@@ -53,9 +53,9 @@ class User < ApplicationRecord
     @client = Twilio::REST::Client.new
     @client.messages.create(
       # from: '+15005550006',
-      from: '+12013796812', 
+      from: '+15084166350',
       to: self.phone_number,
-      body: "Your venueCrasher pin is #{self.pin}"
+      body: "Your ShindigSpace pin is #{self.pin}"
     )
   end
 
