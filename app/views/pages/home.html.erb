@@ -177,7 +177,7 @@
   $('#start_date').datepicker({
     dateFormat: 'mm/dd/yy',
     minDate: 0, 
-    maxDate: '6m',
+    maxDate: '12m',
     onSelect: function(selected) {
       $('#end_date').datepicker("option", "minDate", selected);
       $('#end_date').attr("disabled", false);
