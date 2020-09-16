@@ -18,7 +18,7 @@
                   <!-- PHOTOS UPLOAD GOES HERE -->
     
                   <%= form_for @venue, url: venue_photos_path(@venue), method: 'post', html: {multipart: true} do |f| %>
-                    <div class="row">
+                    <div class="container">
                       <div class="form-group">
                         <span class="btn btn-default btn-file text-babu">
                           <i class="fa fa-cloud-upload" aria-hidden="true"></i> Select Photos
