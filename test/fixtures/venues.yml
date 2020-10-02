@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  pool_type: MyString
+  venue_type: MyString
   accommodate: 1
-  rest_pool: 1
+  rest_venue: 1
   listing_name: MyString
   summary: MyText
   address: MyString
@@ -12,7 +12,7 @@ one:
   is_bar: false
   is_self_parking: false
   is_garage_parking: false
-  is_heated_pool: false
+  is_heated_venue: false
   is_wifi: false
   is_accessible: false
   price: 1
@@ -20,9 +20,9 @@ one:
   user: one
 
 two:
-  pool_type: MyString
+  venue_type: MyString
   accommodate: 1
-  rest_pool: 1
+  rest_venue: 1
   listing_name: MyString
   summary: MyText
   address: MyString
@@ -31,7 +31,7 @@ two:
   is_bar: false
   is_self_parking: false
   is_garage_parking: false
-  is_heated_pool: false
+  is_heated_venue: false
   is_wifi: false
   is_accessible: false
   price: 1

@@ -4,10 +4,10 @@ one:
   day: 2017-10-10
   price: 1
   status: 1
-  barbershop: one
+  venue: one
 
 two:
   day: 2017-10-10
   price: 1
   status: 1
-  barbershop: two
+  venue: two
