@@ -68,7 +68,7 @@ class ReservationsController < ApplicationController
   def send_sms(venue, reservation)
     @client = Twilio::REST::Client.new
     @client.messages.create(
-      from: '+3125488878',
+      from: '+15084166350',
       to: venue.user.phone_number,
       body: "#{reservation.user.fullname} booked your '#{venue.listing_name}'"
     )
@@ -83,7 +83,7 @@ class ReservationsController < ApplicationController
           :description => venue.listing_name,
           :currency => "usd", 
           :destination => {
-            :amount => reservation.total * 80, # 80% of the total amount goes to the Host, 20% is company fee
+            :amount => reservation.total * 100, # 100% of the total amount goes to the Host
             :account => venue.user.merchant_id # venue's Stripe customer ID
           }
         )
