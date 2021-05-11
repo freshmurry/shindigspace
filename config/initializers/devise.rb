@@ -276,12 +276,12 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   # config.omniauth :facebook, '', '', scope: 'email', info_fields: 'email, name'
-  config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], scope: 'email', info_fields: 'email, name'
-  # config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], callback_url: 'www.shindigspace.com/auth/facebook/callback'
-                # client_options: {
-                #     site: 'https://graph.facebook.com/v2.11',
-                #     authorize_url: "https://www.facebook.com/v2.11/dialog/oauth"
-                # }
+  # config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], scope: 'email', info_fields: 'email, name'
+  config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], callback_url: 'www.shindigspace.com/auth/facebook/callback',
+                client_options: {
+                    site: 'https://graph.facebook.com/v2.11',
+                    authorize_url: 'https://www.facebook.com/v2.11/dialog/oauth'
+                }
 
   #----- STRIPE TEST -----
   # config.omniauth :stripe_connect, 'ca_Bz12s2Z5ijkGknATCnWx9EmDZIvGMf0e', 'sk_test_uQnVqs5Vnt9upqbJJNCSmiYy', scope: 'read_write', stripe_landing: 'login'
