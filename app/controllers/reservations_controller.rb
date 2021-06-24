@@ -68,7 +68,7 @@ class ReservationsController < ApplicationController
   def send_sms(venue, reservation)
     @client = Twilio::REST::Client.new
     @client.messages.create(
-      from: '+15084166350',
+      from: '+14043412701',
       to: venue.user.phone_number,
       body: "#{reservation.user.fullname} booked your '#{venue.listing_name}'"
     )
@@ -79,11 +79,11 @@ class ReservationsController < ApplicationController
         customer = Stripe::Customer.retrieve(reservation.user.stripe_id)
         charge = Stripe::Charge.create(
           :customer => customer.id,
-          :amount => reservation.total * 100,
+          :amount => reservation.total * 90,
           :description => venue.listing_name,
           :currency => "usd", 
           :destination => {
-            :amount => reservation.total * 100, # 100% of the total amount goes to the Host
+            :amount => reservation.total * 90, # 90% of the total amount goes to the Host, 10% goes to ShindigSpace
             :account => venue.user.merchant_id # venue's Stripe customer ID
           }
         )
