@@ -136,37 +136,20 @@ ActiveRecord::Schema.define(version: 20200908080630) do
   end
 
   create_table "venues", force: :cascade do |t|
-    t.string   "venue_type"
-    t.string   "event_type"
     t.integer  "accommodate"
-    t.integer  "restrooms"
     t.string   "listing_name"
     t.text     "description"
     t.string   "address"
-    t.boolean  "is_kitchen"
-    t.boolean  "is_tables"
-    t.boolean  "is_chairs"
-    t.boolean  "is_microphone"
-    t.boolean  "is_projector"
-    t.boolean  "is_speakers"
-    t.boolean  "is_self_parking"
-    t.boolean  "is_valet_parking"
-    t.boolean  "is_garage_parking"
-    t.boolean  "is_air"
-    t.boolean  "is_heating"
-    t.boolean  "is_wifi"
-    t.boolean  "is_custodial"
-    t.boolean  "is_accessible"
-    t.boolean  "is_tablecloths"
-    t.boolean  "is_garbage_removal"
-    t.boolean  "is_stage"
+    t.boolean  "is_youpickup"
+    t.boolean  "is_youdropoff"
+    t.boolean  "is_wedropoff"
+    t.boolean  "is_wepickup"
     t.integer  "price"
     t.boolean  "active"
     t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "instant",            default: 1
-    t.boolean  "is_bar"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "instant",       default: 1
     t.float    "latitude"
     t.float    "longitude"
     t.index ["user_id"], name: "index_venues_on_user_id"

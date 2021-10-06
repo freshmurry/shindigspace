@@ -10,11 +10,6 @@ class Venue < ApplicationRecord
     
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-  
-  validates :venue_type, presence: true
-  validates :event_type, presence: true
-  validates :accommodate, presence: true
-  validates :restrooms, presence: true
 
   def cover_photo(size)
     if self.photos.length > 0

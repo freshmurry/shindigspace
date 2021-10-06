@@ -55,7 +55,7 @@
               <div class="col-md-12 text-center">
                 <% if @reservations.blank? %>
                   <h3>You don't have any current reservations</h3><br/>
-                  <%= link_to "Search Venues", search_path, class: "btn btn-normal" %>
+                  <%= link_to "Search Items", search_path, class: "btn btn-normal" %>
                 <% else %>
                   <%= column_chart @reservation.Waiting, colors: ["#16A085"] %>
                 <% end %>

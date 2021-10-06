@@ -30,7 +30,7 @@
             </div>
             <div class="center">
               <% if current_user && current_user != @venue.user %>
-                <%= link_to "Message Host", conversations_path(sender_id: current_user.id, recipient_id: @venue.user.id), method: :post, class: "btn btn-default" %>
+                <%= link_to "Message Vendor", conversations_path(sender_id: current_user.id, recipient_id: @venue.user.id), method: :post, class: "btn btn-default" %>
               <% end %>
             </div>
           </div>
@@ -42,24 +42,12 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-xs-3 col-sm-3 col-md-3">
-            <i class="fas fa-calendar-check fa-2x"></i>
-          </div>
-          <div class="col-xs-3 col-sm-3 col-md-3">
-             <i class="fa fa-building fa-2x"></i>
-          </div>
-          <div class="col-xs-3 col-sm-3 col-md-3">
             <i class="fa fa-users fa-2x"></i>
-          </div>
-          <div class="col-xs-3 col-sm-3 col-md-3">
-            <i class="fas fa-toilet fa-2x"></i>
           </div>
         </div>
         
         <div class="row text-center">
-          <div class="col-xs-3 col-sm-3 col-md-3"><%= @venue.event_type %></div>
-          <div class="col-xs-3 col-sm-3 col-md-3"><%= @venue.venue_type %></div>
           <div class="col-xs-3 col-sm-3 col-md-3"><%= @venue.accommodate %></div>
-          <div class="col-xs-3 col-sm-3 col-md-3"><%= @venue.restrooms %></div>
         </div>
       </div>  
       <hr/>
@@ -90,31 +78,10 @@
                   <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4">
                       <ul class="amenities">
-                        <li class="<%= 'text-line-through' if !@venue.is_kitchen %>">Kitchen</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_tables %>">Tables</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_chairs %>">Chairs</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_microphone %>">Microphone</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_custodial %>">Custodial Services</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_accessible %>">Accessible</li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4">
-                      <ul class="amenities">
-                        <li class="<%= 'text-line-through' if !@venue.is_projector %>">Projector</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_speakers %>">Speakers</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_self_parking %>">Self-Parking</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_valet_parking %>">Valet Parking</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_tablecloths %>">Tablecloths</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_bar %>">Bar</li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4">
-                      <ul class="amenities">
-                        <li class="<%= 'text-line-through' if !@venue.is_garage_parking %>">Garage Parking</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_air %>">A/C</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_heating %>">Heating</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_wifi %>">Wifi</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_stage %>">Stage</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_wepickup %>">We Pickup</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_wedropoff %>">We Drop Off</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_youpickup %>">You Pickup</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_youdropoff %>">You Drop Off</li>
                       </ul>
                     </div>
                   </div>
