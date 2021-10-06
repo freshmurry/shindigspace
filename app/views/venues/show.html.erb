@@ -56,7 +56,7 @@
       <div class="container">
         <div class="row">
           <div class="panel panel-default">
-            <div class="panel-heading">About This Venue</div>
+            <div class="panel-heading">About This Listing</div>
             <div class="panel-body">
               <div class="container">
                 <p><%= @venue.description %></p>
@@ -71,7 +71,7 @@
       <div class="container">
         <div class="row">
           <div class="panel panel-default">
-            <div class="panel-heading">Amenities</div>
+            <div class="panel-heading">Additional Service</div>
             <div class="panel-body">
               <div class="container">
                 <div class="col-md-12">
@@ -175,9 +175,9 @@
       </div>  
       <hr/>
     
-      <!-- NEARBY VENUES -->
+      <!-- NEARBY EVENT ITEMS -->
       <div class="panel panel-default">
-        <div class="panel-heading">Nearby Venue Spaces</div>
+        <div class="panel-heading">Nearby Event Items</div>
           <% for venue in @venue.nearbys(10) %>
         <div class="col-md-4">
           <div class="panel panel-default">
