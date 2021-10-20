@@ -9,6 +9,7 @@ class CreateVenues < ActiveRecord::Migration[5.0]
       t.boolean :is_youdropoff
       t.boolean :is_wedropoff
       t.boolean :is_wepickup
+      t.integer :instant, default: 1
       t.integer :price
       t.boolean :active
       t.references :user, index: true, foreign_key: true
