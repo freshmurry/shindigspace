@@ -23,7 +23,7 @@
         <% if (!user_signed_in?) %>
           <li>
             <button class="btn btn-form btn-small">
-              <%= link_to "List An Item", new_user_registration_path, style: "color: white; text-decoration: none;" %>
+              <%= link_to "List a Space", new_user_registration_path, style: "color: white; text-decoration: none;" %>
             </button>
           </li>
           <li><%= link_to "Login", new_user_session_path %></li>
@@ -74,7 +74,7 @@
         <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "Messages", conversations_path %></li>
         <li <% if current_page?(revenues_path) %> class="active" <% end %> ><%= link_to "Revenues", revenues_path %></li>
         <li <% if current_page?(current_reservations_path) %> class="active" <% end %> ><%= link_to "Current Reservations", current_reservations_path %></li>
-        <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "Vendor Calendar", host_calendar_path %></li>
+        <li <% if current_page?(host_calendar_path) %> class="active" <% end %> ><%= link_to "Host Calendar", host_calendar_path %></li>
         <li <% if current_page?(payment_method_path) %> class="active" <% end %> ><%= link_to "Account Settings", payment_method_path %></li>
       </ul>
     </div>
