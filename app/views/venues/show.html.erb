@@ -78,10 +78,11 @@
                   <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4">
                       <ul class="amenities">
-                        <li class="<%= 'text-line-through' if !@venue.is_wepickup %>">We Pickup</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_wedropoff %>">We Drop Off</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_youpickup %>">You Pickup</li>
-                        <li class="<%= 'text-line-through' if !@venue.is_youdropoff %>">You Drop Off</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_tables %>">Tables</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_chairs %>">Chairs</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_wifi %>">Wifi</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_projector %>">Projector</li>
+                        <li class="<%= 'text-line-through' if !@venue.is_speakers %>">Speakers</li>
                       </ul>
                     </div>
                   </div>

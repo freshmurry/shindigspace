@@ -5,10 +5,11 @@ class CreateVenues < ActiveRecord::Migration[5.0]
       t.string :listing_name
       t.text :description
       t.string :address
-      t.boolean :is_youpickup
-      t.boolean :is_youdropoff
-      t.boolean :is_wedropoff
-      t.boolean :is_wepickup
+      t.boolean :is_tables
+      t.boolean :is_chairs
+      t.boolean :is_projector
+      t.boolean :is_wifi
+      t.boolean :is_speakers
       t.integer :instant, default: 1
       t.integer :price
       t.boolean :active
