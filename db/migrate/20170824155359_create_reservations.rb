@@ -7,6 +7,7 @@ class CreateReservations < ActiveRecord::Migration[5.0]
       t.datetime :end_date
       t.integer :price
       t.integer :total
+      t.integer :status, :integer, default: 0
 
       t.timestamps
     end

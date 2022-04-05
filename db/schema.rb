@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200908080630) do
+ActiveRecord::Schema.define(version: 20180109174910) do
 
   create_table "calendars", force: :cascade do |t|
     t.date     "day"
@@ -65,9 +65,10 @@ ActiveRecord::Schema.define(version: 20200908080630) do
     t.datetime "end_date"
     t.integer  "price"
     t.integer  "total"
+    t.integer  "status",     default: 0
+    t.integer  "integer",    default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.integer  "status",     default: 0
     t.index ["user_id"], name: "index_reservations_on_user_id"
     t.index ["venue_id"], name: "index_reservations_on_venue_id"
   end
@@ -148,11 +149,11 @@ ActiveRecord::Schema.define(version: 20200908080630) do
     t.integer  "instant",      default: 1
     t.integer  "price"
     t.boolean  "active"
+    t.float    "longitude"
+    t.float    "latitude"
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.float    "latitude"
-    t.float    "longitude"
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
