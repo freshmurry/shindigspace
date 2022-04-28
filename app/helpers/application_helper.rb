@@ -8,6 +8,14 @@ module ApplicationHelper
     end
   end
   
+  def profile_avatar_select(user)
+    return image_tag user.avatar.url(:thumb),
+        id: 'image-preview',
+           class: 'img-responsive img-circle profile-image' if user.avatar.exists?
+        image_tag 'default-avatar.jpg', id: 'image-preview',
+          class: 'img-responsive img-circle profile-image'
+  end
+  
   def stripe_express_path
   # ----- TEST -----
   # "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://connect.stripe.com/connect/default/oauth/test&client_id=ca_HmZdg9VWvpwEchu1nuuzlCBFWTzegwfV&state={STATE_VALUE}"
