@@ -8,6 +8,19 @@ module ApplicationHelper
     end
   end
   
+  def image(user)
+    if user.image
+      return user.image
+    elsif
+      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+      "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+    else
+      def image(user)
+        'blank.jpg'
+      end
+    end
+  end
+  
   def stripe_express_path
   # ----- TEST -----
   # "https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://connect.stripe.com/connect/default/oauth/test&client_id=ca_HmZdg9VWvpwEchu1nuuzlCBFWTzegwfV&state={STATE_VALUE}"

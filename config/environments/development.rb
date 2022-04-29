@@ -68,15 +68,25 @@ Rails.application.configure do
   
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'https://2445c200511a440e97d96c6881a9ed7a.vfs.cloud9.us-east-1.amazonaws.com/' }
+  # config.action_mailer.default_url_options = { host: 'https://2445c200511a440e97d96c6881a9ed7a.vfs.cloud9.us-east-1.amazonaws.com' }
 
   # Mailgun Integration
   
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: 2525,
-    domain: 'sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.mailgun.org',
+  #   port: 587,
+  #   domain: 'sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
+  #   authentication: 'plain',
+  #   user_name: 'postmaster@sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
+  #   password: '20e436f9190a67c9fbb9b852ab52cae8'
+  # }
+  
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.org',
+    port: 587,
+    # domain: 'info@shindigspace.com',
     authentication: 'plain',
     user_name: 'postmaster@sandbox849ca54dc98b42888da6976e40db3c35.mailgun.org',
     password: '20e436f9190a67c9fbb9b852ab52cae8'
