@@ -88,9 +88,9 @@
       <hr/>
       
       <!-- About -->
-      <div class="container">
-        <div class="row">
-          <div class="panel">
+      <div class="">
+        <div class="">
+          <div class="panel-default">
             <div class="h3">About This Listing</div>
             <div class="panel-body">
               <div class="container">
@@ -100,12 +100,12 @@
           </div>
         </div>
       </div>  
-      <br/>
+      <hr/>
       
       <!-- AMENITIES --> 
-      <div class="container">
-        <div class="row">
-          <div class="panel">
+      <div class="">
+        <div class="">
+          <div class="panel-default">
             <div class="h3">What this place offers</div>
             <div class="panel-body">
               <div class="container">
@@ -135,12 +135,13 @@
           </div>
         </div>
       </div>
-
+      <hr/>
+      
       <!-- CAROUSEL -->
       
       <!-- REVIEWS -->
-      <div class="container">
-        <div class="row">
+      <div class="">
+        <div class="">
           <div class="panel">
             <div class="h3">Guest Reviews (<%= @guest_reviews.count %>) <span id="average_rating"></span></div>
             <div class="container">
@@ -153,8 +154,8 @@
       </div>
           
       <!-- GOOGLE MAP -->
-      <div class="container">
-        <div class="row">
+      <div class="">
+        <div class="">
           <div id="map" style="width: 100%; height: 400px"></div>
           <!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwN_tpAAKnHhy14HzNqK-XeuarVJhNHg8"></script>
@@ -185,12 +186,12 @@
       <hr/>
     
       <!-- NEARBY EVENT ITEMS -->
-      <div class="panel">
+      <!--<div class="">-->
         <div class="h3">Nearby Event Spaces</div>
           <% for venue in @venue.nearbys(10) %>
         <div class="col-md-4">
-          <div class="panel">
-            <div class="h3 preview">
+          <div class="panel panel-default">
+            <div class="panel-heading preview">
               <%= image_tag venue.cover_photo(:medium) %>
             </div>
                   
@@ -203,7 +204,7 @@
           </div>
         </div>
         <% end %>
-      </div>
+      <!--</div>-->
     </div>
     
     <!-- RIGHT PANEL -->
