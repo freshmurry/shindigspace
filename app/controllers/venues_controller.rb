@@ -1,7 +1,7 @@
 class VenuesController < ApplicationController
   before_action :set_venue, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show, :preload, :preview]
-  before_action :is_authorized, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
+  before_action :is_authorized, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update, :destroy]
   
   def index
     @venues = current_user.venues
@@ -61,6 +61,14 @@ class VenuesController < ApplicationController
     end
     redirect_back(fallback_location: request.referer)
     # redirect_to venue_path(@venue), notice: "Saved..."
+  end
+  
+  def destroy
+    @venue = Venue.find(params[:id])
+    @venue.destroy
+
+    # redirect_back(fallback_location: request.referer, notice: "Deleted...!")
+    redirect_to root_path, notice: "Deleted..."
   end
   
   #---- RESERVATIONS ----

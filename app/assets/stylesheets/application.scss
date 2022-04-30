@@ -74,6 +74,13 @@ header {
   background-image: url('https://i.pinimg.com/originals/fd/7a/9e/fd7a9ea2a02b9cd3a05ea4dbe55ee837.jpg');
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #000 !important;
+}
+
 .page-header {
   position: relative;
   padding-top: 8rem;
@@ -87,10 +94,10 @@ header {
   margin-top: 120px;
 }
 
-// h1 .page-header-title {
-//   text-size: 60px;
-//   color: #FFF !important;
-// }
+.page-header-title {
+  font-size: 60px;
+  color: #FFF !important;
+}
 
 .overlay {
   position: relative;
@@ -202,6 +209,7 @@ div.panel-body {
   font-size: 2.5em;
   font-weight: bold; font-family: Ubuntu;
   margin-top: 5px;
+  text-shadow: rgb(0, 0, 0) 1px 1px;
 }
 
 ul.nav.navbar-nav.navbar-right a {
@@ -553,7 +561,7 @@ ul.nav.navbar-nav.navbar-right a {
 }
 
 .va-middle {
-  color: #fff;
+  color: #FFF;
   vertical-align: middle;
   display: table-cell;
 }
