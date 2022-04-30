@@ -118,6 +118,6 @@ class VenuesController < ApplicationController
     end
 
     def venue_params
-      params.require(:venue).permit(:accommodate, :listing_name, :description, :address, :is_tables, :is_chairs, :is_projector, :is_speakers, :is_wifi, :price, :active, :instant)
+      params.require(:venue).permit(:accommodate, :bathrooms, :parking, :listing_name, :description, :address, :is_tables, :is_chairs, :is_projector, :is_speakers, :is_wifi, :price, :active, :instant)
     end
 end

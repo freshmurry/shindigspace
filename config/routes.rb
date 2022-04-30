@@ -57,8 +57,8 @@ Rails.application.routes.draw do
 
    resources :revenues, only: [:index]
 
-   resources :conversations, only: [:index, :create, :destroy]  do
-     resources :messages, only: [:index, :create, :destroy]
+   resources :conversations, only: [:index, :create, :update, :destroy]  do
+     resources :messages, only: [:index, :create, :update, :destroy]
    end
 
    get '/host_calendar' => "calendars#host"

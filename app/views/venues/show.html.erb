@@ -69,13 +69,20 @@
       <!-- Venue Info -->
       <div class="container">
         <div class="row text-center">
-          <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="col-xs-4 col-sm-4 col-md-4">
             <i class="fa fa-users fa-2x"></i>
           </div>
+          <div class="col-xs-4 col-sm-4 col-md-4">
+            <i class="fa fa-toilet fa-2x"></i>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4">
+            <i class="fa fa-car fa-2x"></i>
+          </div>
         </div>
-        
         <div class="row text-center">
-          <div class="col-xs-3 col-sm-3 col-md-3"><%= @venue.accommodate %></div>
+          <div class="col-xs-4 col-sm-4 col-md-4"><%= @venue.accommodate %></div>
+          <div class="col-xs-4 col-sm-4 col-md-4"><%= @venue.bathrooms %></div>
+          <div class="col-xs-4 col-sm-4 col-md-4"><%= @venue.parking %></div>
         </div>
       </div>  
       <hr/>
@@ -179,7 +186,7 @@
     
       <!-- NEARBY EVENT ITEMS -->
       <div class="panel">
-        <div class="h3">Nearby Event Items</div>
+        <div class="h3">Nearby Event Spaces</div>
           <% for venue in @venue.nearbys(10) %>
         <div class="col-md-4">
           <div class="panel">

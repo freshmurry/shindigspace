@@ -21,19 +21,24 @@ class MessagesController < ApplicationController
     end
   end
   
-  # def destroy
-  #   @message.destroy
-  #   redirect_to messages_url
-    # @message = Message.find(params[:id])
-    # @conversation = @message.conversation
+  def edit
+  end
+  
+  def update
+    if @message.update(message_params)
+      redirect_to @message, notice: 'Message was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+  
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
 
-    # @message.destroy
-    # @messages = Message.where(conversation_id: @conversation.id)
-
-    # respond_to :js
-
-  #   redirect_back(fallback_location: request.referer, notice: "Message Deleted!")
-  # end
+    # redirect_back(fallback_location: request.referer, notice: "Deleted...!")
+    redirect_to conversation_messages_path, notice: "Deleted..."
+  end
   
   private
 

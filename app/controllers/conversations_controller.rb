@@ -14,20 +14,14 @@ class ConversationsController < ApplicationController
 
     redirect_to conversation_messages_path(@conversation)
   end
+  
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
 
-  # def destroy
-  #   @conversation.destroy
-  #   redirect_to conversations_url
-
-    # @conversation = Conversation.find(params[:id])
-    # @recipent = @conversation.recipent
-
-    # @conversation.destroy
-    # @conversations = Conversation.where(recipient_id: @recipent.id)
-
-  #   respond_to :js
-  #   redirect_back(fallback_location: request.referer, notice: "Conversation Deleted!")
-  # end
+    # redirect_back(fallback_location: request.referer, notice: "Deleted...!")
+    redirect_to conversation_messages_path, notice: "Deleted..."
+  end
 
   private
     

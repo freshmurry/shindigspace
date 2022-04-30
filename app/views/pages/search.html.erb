@@ -51,27 +51,45 @@
                       <%= f.select :accommodate_gteq, [["30", 30], ["40", 40], ["50", 50], ["60", 60], ["70", 70], ["80", 80], ["90", 90], ["100", 100], 
                        ["120", 120], ["130", 130], ["150", 150], ["200", 200], ["250", 250], ["300+", 300]],
                        id: "accommodate", prompt: "Select...", class: "form-control" %>
-                    </div>
                   </div>
                 </div>
-                <hr/>
+                
+                <div class="col-md-4">
+                  <div class="form-group select">
+                    <label>Bathrooms</label>
+                    <%= f.select :bathrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4]], id: "bathrooms", prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <div class="form-group select">
+                    <label>Parking</label>
+                    <%= f.select :parking, [["Parking Lot", "Parking Lot"], ["Street Parking", "Street Parking"], ["Parking Garage", "Parking Garage"], ["Valet Parking", "Valet Parking"]], id: "parking", prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+              
+              <hr/>
       
                 <div class="row">
                   <div class="panel panel-default">
-                    <div class="panel-heading">Services</div>
+                    <div class="panel-heading">Amenities</div>
                       <div class="panel-body">
                         <div class="container">
                           <div class="col-md-4">
-                            <%= check_box_tag "q[is_wepickup_eq_any]", true %> We Pickup
+                            <%= check_box_tag "q[is_tables_eq_any]", true %> Tables
                           </div>
                           <div class="col-md-4">
-                            <%= check_box_tag "q[is_wedropoff_eq_any]", true %> We Drop Off
+                            <%= check_box_tag "q[is_chairs_eq_any]", true %> Chairs
                           </div>
                           <div class="col-md-4">
-                            <%= check_box_tag "q[is_youpickup_eq_any]", true %> You Pickup
+                            <%= check_box_tag "q[is_wifi_eq_any]", true %> Wifi
                           </div>
                           <div class="col-md-4">
-                            <%= check_box_tag "q[is_youdropoff_eq_any]", true %> You Drop Off
+                            <%= check_box_tag "q[is_projector_eq_any]", true %> Projector
+                          </div>
+                          <div class="col-md-4">
+                            <%= check_box_tag "q[is_speakers_eq_any]", true %> Speakers
                           </div>
                         </div>  
                       </div>

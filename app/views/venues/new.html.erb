@@ -19,7 +19,12 @@
                        id: "accommodate", prompt: "Select...", class: "form-control" %>
                   </div>
                 </div>
-                  
+                <div class="col-md-4 select">
+                  <div class="form-group">
+                    <label>Bathrooms</label>
+                    <%= f.select :bathrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4]], id: "bathrooms", prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>                
                 <div class="col-md-4 select">
                   <div class="form-group">
                     <label>Booking Type</label>
