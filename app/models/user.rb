@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "profile-photo.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,7 +9,8 @@ class User < ApplicationRecord
 
   validates :fullname, presence: true, length: {maximum: 50}
   
-  has_attached_file :avatar  
+  has_attached_file :image, :default_url => "profile-photo.png"
+
   has_many :venues
   has_many :reservations
   

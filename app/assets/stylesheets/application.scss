@@ -80,6 +80,7 @@ header {
   padding-bottom: inherit;
   margin: 0;
   color: white !important;
+  text-shadow: rgb(0, 0, 0) 2px 1px;
 }
 
 .page-header-content {
@@ -139,7 +140,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 a {
   color: #34495E;
-  // color: #00A699;
+  // color: #FF385C;
 }
 
 h1 {
@@ -197,7 +198,7 @@ div.panel-body {
 }
 
 .navbar-default .navbar-brand {
-  color: #2C3E50;
+  color: #FF385C;
   font-size: 2.5em;
   font-weight: bold; font-family: Ubuntu;
   margin-top: 5px;
@@ -256,8 +257,8 @@ ul.nav.navbar-nav.navbar-right a {
 }
 
 .btn.btn-form {
-  border: 1px outset #00A699;
-  background-color: #00A699;
+  border: 1px outset #FF385C;
+  background-color: #FF385C;
   // border-radius: 2px;
 }
 
@@ -480,8 +481,9 @@ ul.nav.navbar-nav.navbar-right a {
     padding: 4px 8px;
     border-radius: 3px;
     color: #FFF;
-    background-color: #212429;
+    background-color: #FF385C;
     text-align: center;
+    font-weight: 600;
 }
 
 // RESERVATIONS

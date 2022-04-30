@@ -1,25 +1,36 @@
 module ApplicationHelper
-  def avatar_url(user)
-    if user.image
-      "https://graph.facebook.com/#{user.uid}/picture?type=large"
-    else
-      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-      "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
-    end
-  end
+  # def avatar_url(user)
+  #   if user.image
+  #     "https://graph.facebook.com/#{user.uid}/picture?type=large"
+  #   elsif
+  #     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+  #     "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+  #   else
+  #     "profile-photo.png"
+  #   end
+  # end
   
   def image(user)
     if user.image
-      return user.image
+      "https://graph.facebook.com/#{user.uid}/picture?type=large"
     elsif
       gravatar_id = Digest::MD5::hexdigest(user.email).downcase
       "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
     else
-      def image(user)
-        'blank.jpg'
-      end
+      'profile-photo.png'
     end
   end
+  
+  # def image_url(user)
+  #   if user.image
+  #     "profile-photo.png"
+  #   elsif
+  #     "https://graph.facebook.com/#{user.uid}/picture?type=large"
+  #   else
+  #     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+  #     "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
+  #   end
+  # end
   
   def stripe_express_path
   # ----- TEST -----
