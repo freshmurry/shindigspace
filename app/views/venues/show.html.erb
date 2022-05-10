@@ -2,15 +2,15 @@
   <div class="container">
     <!-- Image -->
     <div class="row">
-      <div class="col-md-12">
+      <div class="">
         <% if @photos.length > 0 %>
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
-            <ol class="carousel-indicators">
+            <!--<ol class="carousel-indicators">-->
               <% @photos.each do |photo| %>
                 <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
               <% end %>
-            </ol>
+            <!--</ol>-->
           
             <!--Wrapper for slides -->
             <div class="carousel-inner">
