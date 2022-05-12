@@ -2,7 +2,7 @@ class Venue < ApplicationRecord
   enum instant: {Request: 0, Instant: 1}
   
   belongs_to :user, required: false
-  has_many :photos
+  has_many :photos, dependent: :delete_all
   has_many :reservations
   
   has_many :guest_reviews
