@@ -11,7 +11,7 @@ class User < ApplicationRecord
   
   has_attached_file :image, :default_url => "profile-photo.png"
 
-  has_many :venues
+  has_many :venues, dependent: :delete_all
   has_many :reservations
   
   has_many :guest_reviews, class_name: "GuestReview", foreign_key: "guest_id"
