@@ -189,12 +189,13 @@
       <!--<div class="">-->
         <div class="h3">Nearby Event Spaces</div>
           <% for venue in @venue.nearbys(10) %>
+
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading preview">
               <%= image_tag venue.cover_photo(:medium) %>
             </div>
-          
+                  
             <div class="panel-body">
               <div class="container">
                 <%= link_to venue.listing_name, venue %><br/>
