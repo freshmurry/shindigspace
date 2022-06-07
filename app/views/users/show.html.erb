@@ -33,7 +33,7 @@
           <div class="panel-body">
             <div class="container">
               <ul class="sidebar-list">
-                <li>Member since: <b><%= @user.created_at.strftime("%B %Y") %></b></li>&nbsp;
+                <li>Member since: <b><%= @user.created_at.strftime("%A, %B %d, %Y") %></b></li>&nbsp;
                 <li>Last login: <b><%= @user.last_sign_in_at&.strftime("%A, %B %d, %Y") %></b></li>
               </ul>
             </div>  
@@ -80,4 +80,4 @@
       </div>
     </div>
   </div>  
-</section>    
+</section>
