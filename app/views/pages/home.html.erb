@@ -1,20 +1,20 @@
-<header class="page-header bg-img-cover overlay overlay-primary overlay-90 page-header-dark" style="background-image: url('https://cdn.pixabay.com/photo/2020/02/17/19/06/restaurant-4857484_1280.jpg');">
+<header class="page-header bg-img-cover overlay overlay-primary overlay-90 page-header-dark" style="background-image: url('assets/hall.png');">
   <div class="page-header-content py-5">
     <div class="container">
-      <div class="row banner">
-        <div class="col-xl-8 col-lg-10 text-center">
-          <p class="page-header-title">Awesome Event Space Rentals</p>
-          <p class="page-header-text mb-5">Book and rent a unique event space.</p>
+      <div class="row">
+        <div class="col-md-9 banner">
+          <h1 class="text-red">Awesome Event Space Rentals</h1>
+          <p class="page-header-text mb-4">Book and rent a unique event space.</p>
           <div class="form-row justify-content-center">
-            <div class="col-lg-9 col-md-8">
-              <div class="form-group mr-0 mr-lg-2">
+            <div class="">
+              <div class="">
                 <%= form_tag search_path, method: :get do %>
                 <div class="col-md-9">
                   <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control", id: "autolocation" %>
                 </div>  
-                 <div class="col-md-3">
-                  <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
-                </div>
+                <!-- <div class="col-md-3">-->
+                <!--  <= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>-->
+                <!--</div>-->
               </div>
             </div>
             
@@ -27,18 +27,15 @@
       </div>
     </div>
   </div>
-  <sbpro-border>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 10.34" preserveAspectRatio="none" fill="currentColor"></svg>
-  </sbpro-border>
 </header>
 
 <br>
 
 <!-- VENUES -->
 <section class="">
-  <div class="container">
+  <div class="">
     <div class="banner text-center">
-    	<h2 class="text-blue">Event Spaces Near You</h2>
+    	<h2>Event Spaces Near You</h2>
       <h3>Book and rent an event space</h3>
     </div>
     <br/>
@@ -51,14 +48,14 @@
   
 <!-- HOW SHINDIGSPACE WORKS -->
 <section class="" style="background-color: #F5F6fA;">
-  <div class="container">
+  <div class="">
     <div class="page-section">
     <div class="banner text-center">
      	<h2 class="text-blue">How ShindigSpace Works</h2>
       <h3>Contact-less Awesomeness</h3>
     </div>
         
-    <div class="row text-center">
+    <div class="continer text-center">
       <div class="col-md-4">
       <div class="fas fa-building fa-4x text-blue"></div>
         <h3 class="my-3">Find a Unique Space</h3>
@@ -91,7 +88,7 @@
 
 <!-- TESTIMONIALS -->
 <section class="">
-  <div class="container">
+  <div class="">
     <div class="banner page-section bg-light">
       <!--<div class="container">-->
         <div class="text-center">
@@ -99,7 +96,7 @@
           <h3 class="section-subheading">Here's what our customers had to say...</h3>
         </div>
       
-        <div class="banner row">
+        <div class="banner">
           <div class="col-lg-4">
             <div class="discovery-card" style="background-image: url('https://thegrio.com/wp-content/uploads/2020/01/AdobeStock_Black-Woman-e1578688660970.jpg')" alt="Customer 1"></div>
             <h3>Katrina S.</h3>
@@ -133,10 +130,10 @@
 
 <!-- CITIES -->
 <section class="" style="background-color: #F5F6fA;">
-  <div class="container">
+  <div class="">
     <div class="banner text-blue text-center"><h2>Advertise on ShindigSpace</h2></div>
     <br/>
-    <div class="row">
+    <div class="container">
       <div class="col-md-3">
         <div class="discovery-card">
           <a href="https://track.fiverr.com/visit/?bta=7074&nci=5479&campaign=19735" Target="_Top"><img border="0" src="https://fiverr.ck-cdn.com/tn/serve/?cid=1492998"></a>
