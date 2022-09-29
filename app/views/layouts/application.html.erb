@@ -31,7 +31,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content="https://cdn.pixabay.com/photo/2020/02/17/19/06/restaurant-4857484_1280.jpg" />
-    <meta property="og:image" content='<%= @venue.photo.url(:fixed) %>'/>
+    <!--<meta property="og:image" content='<= @venue.photo.url(:fixed) %>'/>-->
     <meta property="og:image" content='<%= link_to image_tag(venue.cover_photo(:medium)), venue %>'/>
     <meta property="og:image" content='<%= image_tag venue.cover_photo(:thumb), venue %>'/>
     
