@@ -1,0 +1,17 @@
+<section class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <strong><%= notification.content %></strong>
+      </div>
+      <div class="col-md-3">
+        <span class="pull-right"><%= notification.created_at.strftime("%m/%d/%Y") %></span>
+      </div>
+      <div class="col-md-1">
+      	<%= link_to notification_settings_path(notification), remote: true, method: :delete, data: { confirm: "Are you sure?" } do %>
+          <!--<i class="fas fa-trash-alt"></i>-->
+      	<% end %>   
+      </div>
+    </div>
+  </div>
+</section>  

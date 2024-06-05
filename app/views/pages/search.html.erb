@@ -1,0 +1,213 @@
+<section class="">
+  <div class="container">
+    <div id="main">
+      <div id="left">
+        <!-- SEARCH PANEL -->
+        <div class="row">
+          <div class="col-md-offset-4 col-md-4">
+            <button id="filter" class="btn btn-default" data-toggle="collapse" data-target="#collapsePanel">
+              More Filters <i class="fa fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="container">
+            <br/>
+            <div class="collapse" id="collapsePanel">
+      
+              <%= search_form_for @search, url: search_path, remote: true do |f| %>
+      
+                <div class="row">
+                  <div class="col-md-8">
+                    <label>Price range:</label>
+                    <div id="slider-range"></div>
+                  </div>
+                  <div class="col-md-2">
+                    <label>Min Price:</label>
+                    <%= f.text_field :price_gteq, class: "form-control" %>
+                  </div>
+                  <div class="col-md-2">
+                    <label>Max Price:</label>
+                    <%= f.text_field :price_lteq, class: "form-control" %>
+                  </div>
+                </div>
+                <hr/>
+      
+                <div class="row">
+                  <div class="col-md-6">
+                    <%= text_field_tag :start_date, params[:start_date], readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
+                  </div>
+                  <div class="col-md-6">
+                    <%= text_field_tag :end_date, params[:end_date], readonly: true, placeholder: "End Date", class: "form-control datepicker" %>
+                  </div>
+                </div>
+                <hr/>
+                    
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group select">
+                    <label>Accommodate</label>
+                      <%= f.select :accommodate_gteq, [["30", 30], ["40", 40], ["50", 50], ["60", 60], ["70", 70], ["80", 80], ["90", 90], ["100", 100], 
+                       ["120", 120], ["130", 130], ["150", 150], ["200", 200], ["250", 250], ["300+", 300]],
+                       id: "accommodate", prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <div class="form-group select">
+                    <label>Bathrooms</label>
+                    <%= f.select :bathrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4]], id: "bathrooms", prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <div class="form-group select">
+                    <label>Parking</label>
+                    <%= f.select :parking, [["Parking Lot", "Parking Lot"], ["Street Parking", "Street Parking"], ["Parking Garage", "Parking Garage"], ["Valet Parking", "Valet Parking"]], id: "parking", prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+              
+              <hr/>
+      
+                <div class="row">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Amenities</div>
+                      <div class="panel-body">
+                        <div class="container">
+                          <div class="col-md-4">
+                            <%= check_box_tag "q[is_tables_eq_any]", true %> Tables
+                          </div>
+                          <div class="col-md-4">
+                            <%= check_box_tag "q[is_chairs_eq_any]", true %> Chairs
+                          </div>
+                          <div class="col-md-4">
+                            <%= check_box_tag "q[is_wifi_eq_any]", true %> Wifi
+                          </div>
+                          <div class="col-md-4">
+                            <%= check_box_tag "q[is_projector_eq_any]", true %> Projector
+                          </div>
+                          <div class="col-md-4">
+                            <%= check_box_tag "q[is_speakers_eq_any]", true %> Speakers
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                  </div>
+      
+                <hr/>
+      
+                <div class="row text-center">
+                  <%= f.submit "Search", class: "btn btn-form" %>
+                </div>
+              <% end %>
+            </div>
+            
+            <br/>
+      
+            <div class="row" id="venue_listing">
+              <%= render partial: "venues/venues_list", locals: {venues: @arrVenues} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div id="right">
+        <!-- GOOGLE MAP WILL BE HERE -->
+    
+        <div id="map" style="width: 100%; height: 100%"></div>
+    
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwN_tpAAKnHhy14HzNqK-XeuarVJhNHg8&callback=initMap"></script>
+        
+        <script>
+          function initialize(venues) {
+            var location = {lat: 41.881832, lng: -87.623177}
+            
+            if (venues.length > 0) {
+              location = {lat: venues[0].latitude, lng: venues[0].longitude}
+            }
+    
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: location,
+              zoom: 14
+            });
+    
+            var marker, inforwindow;
+    
+            venues.forEach(function(venue) {
+              marker = new google.maps.Marker({
+                position: {lat: venue.latitude, lng: venue.longitude},
+                map: map
+              });
+    
+              inforwindow = new google.maps.InfoWindow({
+                content: "<div class='map_price'>$" + venue.price + "</div>"
+              });
+    
+              inforwindow.open(map, marker);
+            })
+          }
+    
+          google.maps.event.addDomListener(window, 'load', function() {
+            initialize(<%= raw @arrVenues.to_json %>)
+          });
+        </script>
+      </div>
+    </div>
+    
+    <script>
+      $('#start_date').datepicker({
+        dateFormat: 'mm/dd/yy',
+        minDate: 0,
+        maxDate: '3m',
+        onSelect: function(selected) {
+          $('#end_date').datepicker("option", "minDate", selected);
+          $('#end_date').attr("disabled", false);
+        }
+      });
+    
+      $('#end_date').datepicker({
+        dateFormat: 'mm/dd/yy',
+        minDate: 0, 
+        maxDate: '3m',
+        onSelect: function(selected) {
+          $('#start_date').datepicker("option", "maxDate", selected);
+        }
+      });
+    
+      var open = true;
+    
+      $('#filter').click(function() {
+        if (open) {
+          $('#filter').html("More filters <i class='fa fa-chevron-up'></i>")
+        } else {
+          $('#filter').html("More filters <i class='fa fa-chevron-down'></i>")
+        }
+        open = !open;
+      });
+    </script>
+    
+    <script>
+      $(function() {
+        $("#q_price_gteq").val('50');
+        $("#q_price_lteq").val('5000');
+    
+        $("#slider-range").slider({
+          range: true,
+          min: 0,
+          max: 5000,
+          values: [50, 5000],
+          slide: function(event, ui) {
+            $("#q_price_gteq").val(ui.values[0]);
+            $("#q_price_lteq").val(ui.values[1]);
+          }
+        });
+    
+        $(".ui-widget-header").css('background', '#2C3E50');
+        $(".ui-state-default, .ui-widget-content").css('background', 'white');
+        $(".ui-state-default, .ui-widget-content").css('border-color', '#2C3E50');
+      })
+    </script>
+  </div>
+</section>
