@@ -52,14 +52,23 @@ class User < ApplicationRecord
     save
   end
   
+  # def send_pin
+  #   @client = Twilio::REST::Client.new
+  #   @client.messages.create(
+  #     from: '+14043412701',
+  #     to: self.phone_number,
+  #     body: "Your ShindigSpace pin is #{self.pin}"
+  #   )
+  # end
+
   def send_pin
-    @client = Twilio::REST::Client.new
+    @client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
     @client.messages.create(
-      from: '+14043412701',
+      from: ENV['TWILIO_PHONE_NUMBER'],
       to: self.phone_number,
       body: "Your ShindigSpace pin is #{self.pin}"
     )
-  end
+  end  
 
   def verify_pin(entered_pin)
     update(phone_verified: true) if self.pin == entered_pin
