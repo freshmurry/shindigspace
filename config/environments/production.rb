@@ -94,7 +94,7 @@ Rails.application.configure do
   
     config.action_mailer.delivery_method = :smtp
     # host = 'shindigspace.com'
-    config.action_mailer.default_url_options = { host: 'https://www.shindigspace.com' }
+    config.action_mailer.default_url_options = { host: 'shindigspace.com' }
     ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
       :port           => '587',
