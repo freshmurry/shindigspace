@@ -18,7 +18,8 @@ class User < ApplicationRecord
   has_many :host_reviews, class_name: "HostReview", foreign_key: "host_id"
   has_many :notifications
   
-  has_one :setting
+  has_one :setting, dependent: :destroy
+  has_many :settings, dependent: :destroy
   after_create :add_setting
 
   def add_setting

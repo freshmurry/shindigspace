@@ -4,7 +4,8 @@
     </div>
   </div>
 
-  <div class="col-md-12">      
+  <%# <div class="col-md-12"> %>
+  <div class="panel-body">       
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
       <%= render 'shared/devisemes' %>
       <%= f.hidden_field :reset_password_token, class: "form-control" %>

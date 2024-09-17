@@ -52,8 +52,8 @@ ActiveAdmin.register Venue do
       f.input :price
       f.input :accommodate, as: :select, collection: [["10", 10], ["20", 20], ["30", 30], ["30", 30], ["40", 40], ["50", 50], ["60", 60], ["70", 70], ["80", 80], ["90", 90], ["100", 100], 
       ["120", 120], ["130", 130], ["150", 150], ["200", 200], ["250", 250], ["300+", 300]], prompt: "Select..."
-      f.input :longitude
       f.input :latitude
+      f.input :longitude
       f.input :bathrooms, as: :select, collection: [["1", 1], ["2", 2], ["3", 3], ["4", 4]], prompt: "Select..."
       f.input :parking, as: :select, collection: [["Parking Lot", "Parking Lot"], ["Street Parking", "Street Parking"], ["Parking Garage", "Parking Garage"], ["Valet Parking", "Valet Parking"]], prompt: "Select..."
     end
@@ -68,6 +68,10 @@ ActiveAdmin.register Venue do
 
     f.inputs 'Photos' do
       f.input :new_photos, as: :file, input_html: { multiple: true }
+      # f.has_many :photos, allow_destroy: true, new_record: true do |pf|
+      #   pf.input :image, as: :file
+      #   pf.input :_destroy, as: :boolean, label: 'Remove'
+      # end
     end
 
     f.inputs 'Existing Photos' do
