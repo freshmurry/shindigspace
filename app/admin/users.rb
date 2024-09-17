@@ -60,7 +60,8 @@ ActiveAdmin.register User do
   show do
     attributes_table do
       row :image do
-        image_tag user.image.url(:thumb) if user.image.present?
+        # image_tag user.image.url(:thumb) if user.image.present?
+        image_tag user.image.url(:thumb), style: "width: 50px; height: 50px; object-fit: cover;"
       end
       row :fullname
       row :email
