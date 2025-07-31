@@ -1,0 +1,30 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Use Amazon S3 to store uploaded files.
+#
+# Add the `aws-sdk-s3` gem to your Gemfile:
+#
+#   gem "aws-sdk-s3", require: false
+#
+# Uncomment and edit the following lines to store files on Amazon S3.
+#
+# amazon:
+#   service: S3
+#   access_key_id:     <%= ENV.fetch("AWS_ACCESS_KEY_ID") %>
+#   secret_access_key: <%= ENV.fetch("AWS_SECRET_ACCESS_KEY") %>
+#   region:            <%= ENV.fetch("AWS_REGION") %>
+#   bucket:            <%= ENV.fetch("AWS_BUCKET") %>
+#
+# Remember not to check the credentials into version control. For that,
+# use the following environment variables:
+#
+#   AWS_ACCESS_KEY_ID
+#   AWS_SECRET_ACCESS_KEY
+#   AWS_REGION
+#   AWS_BUCKET 
