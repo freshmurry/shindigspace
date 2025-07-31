@@ -23,6 +23,9 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
+end
+
+group :development, :test do
   gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
