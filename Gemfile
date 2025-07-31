@@ -12,7 +12,7 @@ gem 'puma', '~> 5.0'
 gem 'jbuilder', '~> 2.11'
 gem 'redis', '~> 4.0'
 gem 'delayed_job'
-gem 'activeadmin', '~> 2.13'
+gem 'activeadmin', '~> 3.3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :windows]
@@ -48,7 +48,7 @@ gem 'aws-sdk', '~> 2.8'
 gem 'geocoder', '~> 1.8'
 gem 'jquery-ui-rails', '~> 6.0'
 
-gem 'ransack', '~> 3.1'
+gem 'ransack', '~> 4.3'
 gem 'figaro'
 
 group :production do
