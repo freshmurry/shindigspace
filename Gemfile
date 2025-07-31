@@ -25,10 +25,6 @@ group :development do
   gem 'spring'
 end
 
-group :development, :test do
-  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-end
-
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver', '>= 4.0.0.rc2'
