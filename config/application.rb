@@ -3,9 +3,6 @@ require 'logger'
 
 require "rails/all"
 
-# Disable Active Storage since we're using Paperclip
-config.active_storage.service = nil
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -14,6 +11,9 @@ module ShindigSpace
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+
+    # Disable Active Storage since we're using Paperclip
+    config.active_storage.service = nil
 
     # Configuration for the application, engines, and railties goes here.
     #
