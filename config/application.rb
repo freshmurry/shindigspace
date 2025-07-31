@@ -3,6 +3,9 @@ require 'logger'
 
 require "rails/all"
 
+# Disable Active Storage since we're using Paperclip
+config.active_storage.service = nil
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
