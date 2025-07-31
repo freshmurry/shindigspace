@@ -47,7 +47,7 @@ gem 'marcel'
 gem 'aws-sdk', '~> 2.8'
 
 gem 'geocoder', '~> 1.8'
-gem 'jquery-ui-rails', '~> 6.0'
+gem 'jquery-ui-rails', '~> 8.0'
 
 gem 'ransack', '~> 3.1'
 gem 'figaro'
