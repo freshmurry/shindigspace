@@ -1,7 +1,12 @@
 class ReservationMailer < ApplicationMailer
-  def send_email_to_guest(guest, venue)
-    @recipient = guest
-    @venue = venue
-    mail(to: @recipient.email, subject: "Thank you and enjoy!💯")
+  def send_email_to_guest(reservation)
+    @reservation = reservation
+    @venue = reservation.venue
+    @guest = reservation.user
+    
+    mail(
+      to: @guest.email,
+      subject: "Reservation Confirmation for #{@venue.name}"
+    )
   end
-end
+end 
