@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading preview">
-        <%= link_to image_tag(venue.cover_photo(:medium), alt: venue.listing_name), venue %>
+        <%= link_to image_tag(venue.cover_photo(:medium) || '/assets/blank-acfbe0ed8e714c342b588d4ec1802d46077c65c1bac7209efc5a9344179a89ba.jpg', alt: venue.listing_name), venue %>
         <div class="price-box-wrapper pull-right">$<%= venue.price %></div>
       </div>
       
