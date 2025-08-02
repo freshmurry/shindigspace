@@ -15,7 +15,13 @@ class Venue < ApplicationRecord
 
   def cover_photo(size)
     if self.photos.length > 0
-      self.photos[0].image.url(size)  
+      url = self.photos[0].image.url(size)
+      # Ensure the URL is properly formatted for external use
+      if url.start_with?('//')
+        "https:#{url}"
+      else
+        url
+      end
     end      
   end
   
