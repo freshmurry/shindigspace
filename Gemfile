@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 6.1.7.10'
+gem 'rails', '~> 7.0.10'
 gem 'sprockets-rails'
 gem 'puma', '~> 5.0'
 gem 'jbuilder', '~> 2.11'
@@ -34,7 +34,7 @@ end
 gem 'tzinfo-data', platforms: [:windows, :jruby]
 
 gem "bootstrap-sass", "~> 3.4.1"
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 
 gem 'toastr-rails', '~> 1.0'
 
@@ -64,7 +64,7 @@ end
 gem 'capistrano', '~> 3.17'
 
 #----  AirKONG  -------
-gem 'twilio-ruby', '~> 7.0'
+gem 'twilio-ruby', '~> 7.10'
 gem 'fullcalendar-rails', '~> 3.4.0'
 gem 'momentjs-rails', '~> 2.29.1'
 
